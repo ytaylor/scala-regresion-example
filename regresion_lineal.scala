@@ -6,7 +6,7 @@ import org.apache.spark.ml.regression.LinearRegressionModel
 import org.apache.spark.ml.regression.LinearRegressionSummary
 
 
-val data = sc.textFile("/home/yanelis/Downloads/TEAD/ENTREGABLES/Proyecto_2/day.csv")
+val data = sc.textFile("day.csv")
 val filterRDD = data.zipWithIndex().collect { case (r, i) if i != 0 => r }
 
 val parsedData1 = filterRDD.map(line => {
